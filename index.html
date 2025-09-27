@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Editor Website</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- Login Screen -->
+  <div id="login-screen">
+    <h1>Login</h1>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p id="login-message"></p>
+  </div>
+
+  <!-- Editor Screen (hidden until login) -->
+  <div id="editor-screen" style="display:none;">
+    <h1>Welcome to Your Editor</h1>
+
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <label>Font: 
+        <select id="font-family" onchange="changeFont()">
+          <option value="Arial">Arial</option>
+          <option value="Verdana">Verdana</option>
+          <option value="Times New Roman">Times New Roman</option>
+          <option value="Courier New">Courier New</option>
+        </select>
+      </label>
+
+      <label>Size: 
+        <select id="font-size" onchange="changeSize()">
+          <option value="14px">14</option>
+          <option value="18px">18</option>
+          <option value="24px">24</option>
+          <option value="32px">32</option>
+        </select>
+      </label>
+
+      <label>Text Color: 
+        <input type="color" id="text-color" onchange="changeTextColor()">
+      </label>
+
+      <label>Background: 
+        <input type="color" id="bg-color" value="#ffffff" onchange="changeBackground()">
+      </label>
+
+      <button onclick="document.execCommand('bold')">Bold</button>
+      <button onclick="document.execCommand('italic')">Italic</button>
+      <button onclick="document.execCommand('underline')">Underline</button>
+      <button onclick="saveText()">💾 Save</button>
+      <button onclick="clearText()">🗑 Clear</button>
+    </div>
+
+    <!-- Editable area -->
+    <div id="editor" contenteditable="true">
+      Start typing here...
+    </div>
+  </div>
+</body>
+</html>
