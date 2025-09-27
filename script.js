@@ -1,6 +1,6 @@
 // Simple login system
 const USERS = [
-  { username: "admin", password: "1234" },
+  { username: "admin", password: "1212" },
   { username: "user", password: "pass" }
 ];
 
